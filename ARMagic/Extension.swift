@@ -41,3 +41,15 @@ extension UIColor {
     self.init(red: newRed, green: newGreen, blue: newBlue, alpha: 1.0)
   }
 }
+
+public extension Float {
+  
+  public static func random() -> Float {
+    return Float(Float(arc4random()) / 0xFFFFFFFF)
+  }
+  
+  public static func random(_ min: Float, max: Float) -> Float {
+    return Float.random() * (max - min) + min
+  }
+  
+}
