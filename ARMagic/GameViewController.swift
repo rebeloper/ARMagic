@@ -6,6 +6,8 @@
 //  Copyright © 2018 Alex Nagy. All rights reserved.
 //
 
+// https://developer.apple.com/documentation/scenekit/built_in_geometry_types
+
 import ARKit
 import LBTAComponents
 
