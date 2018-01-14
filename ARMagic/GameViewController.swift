@@ -11,7 +11,7 @@
 import ARKit
 import LBTAComponents
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController, ARSCNViewDelegate {
   
   let arView: ARSCNView = {
     let view = ARSCNView()
@@ -81,9 +81,11 @@ class GameViewController: UIViewController {
     
     setupViews()
     
+    configuration.planeDetection = .horizontal
     arView.session.run(configuration, options: [])
     arView.debugOptions = [ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
     arView.autoenablesDefaultLighting = true
+    arView.delegate = self
   }
   
   
@@ -143,6 +145,20 @@ class GameViewController: UIViewController {
     arView.session.run(configuration, options: [.removeExistingAnchors, .resetTracking])
   }
   
+  func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+    guard let anchcorPlane = anchor as? ARPlaneAnchor else { return }
+    print("New Plane Anchor found with extent:", anchcorPlane.extent)
+  }
+  
+  func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+    guard let anchcorPlane = anchor as? ARPlaneAnchor else { return }
+    print("Plane Anchor updated with extent:", anchcorPlane.extent)
+  }
+  
+  func renderer(_ renderer: SCNSceneRenderer, didRemove node: SCNNode, for anchor: ARAnchor) {
+    guard let anchcorPlane = anchor as? ARPlaneAnchor else { return }
+    print("Plane Anchor removed with extent:", anchcorPlane.extent)
+  }
   
 }
 
