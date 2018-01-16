@@ -86,6 +86,9 @@ class GameViewController: UIViewController, ARSCNViewDelegate {
     arView.debugOptions = [ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
     arView.autoenablesDefaultLighting = true
     arView.delegate = self
+    
+    let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+    arView.addGestureRecognizer(tapGestureRecognizer)
   }
   
   
@@ -185,7 +188,37 @@ class GameViewController: UIViewController, ARSCNViewDelegate {
     removeNode(named: "floor")
   }
   
+  @objc func handleTap(sender: UITapGestureRecognizer) {
+    let tappedView = sender.view as! SCNView
+    let touchLocation = sender.location(in: tappedView)
+    let hitTest = tappedView.hitTest(touchLocation, options: nil)
+    if !hitTest.isEmpty {
+      let result = hitTest.first!
+      let name = result.node.name
+      let geometry = result.node.geometry
+      print("Tapped \(String(describing: name)) with geometry: \(String(describing: geometry))")
+    }
+  }
+  
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
