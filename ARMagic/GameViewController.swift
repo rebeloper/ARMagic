@@ -34,7 +34,16 @@ class GameViewController: UIViewController, ARSCNViewDelegate {
   
   @objc func handlePlusButtonTapped() {
     print("Tapped on plus button")
-    addNode()
+//    addNode()
+    var doesEarthNodeExistInScene = false
+    arView.scene.rootNode.enumerateChildNodes { (node, _) in
+      if node.name == "earth" {
+        doesEarthNodeExistInScene = true
+      }
+    }
+    if !doesEarthNodeExistInScene {
+      addEarth()
+    }
   }
   
   let minusButtonWidth = ScreenSize.width * 0.1
@@ -198,6 +207,38 @@ class GameViewController: UIViewController, ARSCNViewDelegate {
       let geometry = result.node.geometry
       print("Tapped \(String(describing: name)) with geometry: \(String(describing: geometry))")
     }
+  }
+  
+  // Earth Material Resources:
+  // https://www.solarsystemscope.com/
+  //
+  //
+  // Basic Material Properties:
+  //
+  //
+  // Diffuse: The diffuse property specifies the amount of light diffusely reflected from the surface.
+  //
+  // Specular: The specular property specifies the amount of light to reflect in a mirror-like manner.
+  //
+  // Emmision: The emission property specifies the amount of light the material emits. This emission does not light up other surfaces in the scene.
+  //
+  // Normal: The normal property specifies the surface orientation.
+  
+  func addEarth() {
+    let earthNode = SCNNode()
+    earthNode.name = "earth"
+    earthNode.geometry = SCNSphere(radius: 0.2)
+    earthNode.geometry?.firstMaterial?.diffuse.contents = #imageLiteral(resourceName: "EarthDiffuse")
+    earthNode.geometry?.firstMaterial?.specular.contents = #imageLiteral(resourceName: "EarthSpecular")
+    earthNode.geometry?.firstMaterial?.emission.contents = #imageLiteral(resourceName: "EarthEmmision")
+    earthNode.geometry?.firstMaterial?.normal.contents = #imageLiteral(resourceName: "EarthNormal")
+    earthNode.position = SCNVector3(0,0,-0.5)
+    arView.scene.rootNode.addChildNode(earthNode)
+    
+    let rotate = SCNAction.rotateBy(x: 0, y: CGFloat(360.degreesToRadians), z: 0, duration: 15)
+    let rotateForever = SCNAction.repeatForever(rotate)
+    earthNode.runAction(rotateForever)
+    
   }
   
 }
