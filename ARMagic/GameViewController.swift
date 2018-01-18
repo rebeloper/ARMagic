@@ -84,6 +84,45 @@ class GameViewController: UIViewController, ARSCNViewDelegate {
   
   let configuration = ARWorldTrackingConfiguration()
   
+  let distanceLabel: UILabel = {
+    let label = UILabel()
+    label.font = UIFont.boldSystemFont(ofSize: 14)
+    label.textColor = UIColor.black
+    label.text = "Distance:"
+    return label
+  }()
+  
+  let xLabel: UILabel = {
+    let label = UILabel()
+    label.font = UIFont.boldSystemFont(ofSize: 14)
+    label.textColor = UIColor.red
+    label.text = "x:"
+    return label
+  }()
+  
+  let yLabel: UILabel = {
+    let label = UILabel()
+    label.font = UIFont.boldSystemFont(ofSize: 14)
+    label.textColor = UIColor.green
+    label.text = "y:"
+    return label
+  }()
+  
+  let zLabel: UILabel = {
+    let label = UILabel()
+    label.font = UIFont.boldSystemFont(ofSize: 14)
+    label.textColor = UIColor.blue
+    label.text = "z:"
+    return label
+  }()
+  
+  let centerImageView: UIImageView = {
+    let view = UIImageView()
+    view.image = #imageLiteral(resourceName: "Center")
+    view.contentMode = .scaleAspectFill
+    return view
+  }()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -124,6 +163,21 @@ class GameViewController: UIViewController, ARSCNViewDelegate {
     view.addSubview(resetButton)
     resetButton.anchor(nil, left: nil, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 12, rightConstant: 0, widthConstant: resetButtonWidth, heightConstant: resetButtonWidth)
     resetButton.anchorCenterXToSuperview()
+    
+    view.addSubview(distanceLabel)
+    distanceLabel.anchor(view.safeAreaLayoutGuide.topAnchor, left: view.safeAreaLayoutGuide.leftAnchor, bottom: nil, right: nil, topConstant: 24, leftConstant: 24, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 24)
+    
+    view.addSubview(xLabel)
+    view.addSubview(yLabel)
+    view.addSubview(zLabel)
+    
+    xLabel.anchor(distanceLabel.bottomAnchor, left: view.safeAreaLayoutGuide.leftAnchor, bottom: nil, right: nil, topConstant: 0, leftConstant: 24, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 24)
+    yLabel.anchor(xLabel.bottomAnchor, left: view.safeAreaLayoutGuide.leftAnchor, bottom: nil, right: nil, topConstant: 0, leftConstant: 24, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 24)
+    zLabel.anchor(yLabel.bottomAnchor, left: view.safeAreaLayoutGuide.leftAnchor, bottom: nil, right: nil, topConstant: 0, leftConstant: 24, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 24)
+    
+    view.addSubview(centerImageView)
+    centerImageView.anchorCenterSuperview()
+    centerImageView.anchor(nil, left: nil, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: ScreenSize.width * 0.05, heightConstant: ScreenSize.width * 0.05)
   }
   
   func addNode() {
