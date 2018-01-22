@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3657DB934F3EA007F2C3C8CD /* Pods_ARMagic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE03924CDFC41D837486F26 /* Pods_ARMagic.framework */; };
+		C91011E82011DDD5004CD246 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91011E72011DDD5004CD246 /* Service.swift */; };
 		C97DE8C52004B1E1002F0E38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97DE8C42004B1E1002F0E38 /* AppDelegate.swift */; };
 		C97DE8CC2004B1E1002F0E38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C97DE8CB2004B1E1002F0E38 /* Assets.xcassets */; };
 		C97DE8CF2004B1E1002F0E38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C97DE8CD2004B1E1002F0E38 /* LaunchScreen.storyboard */; };
@@ -18,6 +19,7 @@
 /* Begin PBXFileReference section */
 		94EA91006FB6BEDCC2F7515F /* Pods-ARMagic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARMagic.release.xcconfig"; path = "Pods/Target Support Files/Pods-ARMagic/Pods-ARMagic.release.xcconfig"; sourceTree = "<group>"; };
 		9FE03924CDFC41D837486F26 /* Pods_ARMagic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARMagic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C91011E72011DDD5004CD246 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		C97DE8C12004B1E1002F0E38 /* ARMagic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARMagic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C97DE8C42004B1E1002F0E38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C97DE8CB2004B1E1002F0E38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				C97DE8D02004B1E1002F0E38 /* Info.plist */,
 				C97DE8D62004B326002F0E38 /* GameViewController.swift */,
 				C9BEE9D92005F13C00E9F49A /* Extension.swift */,
+				C91011E72011DDD5004CD246 /* Service.swift */,
 			);
 			path = ARMagic;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9BEE9DA2005F13C00E9F49A /* Extension.swift in Sources */,
+				C91011E82011DDD5004CD246 /* Service.swift in Sources */,
 				C97DE8D72004B326002F0E38 /* GameViewController.swift in Sources */,
 				C97DE8C52004B1E1002F0E38 /* AppDelegate.swift in Sources */,
 			);
