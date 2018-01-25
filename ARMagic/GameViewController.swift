@@ -35,15 +35,15 @@ class GameViewController: UIViewController, ARSCNViewDelegate {
   @objc func handlePlusButtonTapped() {
     print("Tapped on plus button")
 //    addNode()
-    var doesEarthNodeExistInScene = false
-    arView.scene.rootNode.enumerateChildNodes { (node, _) in
-      if node.name == "earth" {
-        doesEarthNodeExistInScene = true
-      }
-    }
-    if !doesEarthNodeExistInScene {
-      addEarth()
-    }
+//    var doesEarthNodeExistInScene = false
+//    arView.scene.rootNode.enumerateChildNodes { (node, _) in
+//      if node.name == "earth" {
+//        doesEarthNodeExistInScene = true
+//      }
+//    }
+//    if !doesEarthNodeExistInScene {
+//      addEarth()
+//    }
   }
   
   let minusButtonWidth = ScreenSize.width * 0.1
@@ -136,6 +136,7 @@ class GameViewController: UIViewController, ARSCNViewDelegate {
     configuration.planeDetection = .horizontal
     arView.session.run(configuration, options: [])
     arView.debugOptions = [ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
+    arView.showsStatistics = true
     arView.autoenablesDefaultLighting = true
     arView.delegate = self
     
@@ -179,9 +180,9 @@ class GameViewController: UIViewController, ARSCNViewDelegate {
     yLabel.anchor(xLabel.bottomAnchor, left: view.safeAreaLayoutGuide.leftAnchor, bottom: nil, right: nil, topConstant: 0, leftConstant: 24, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 24)
     zLabel.anchor(yLabel.bottomAnchor, left: view.safeAreaLayoutGuide.leftAnchor, bottom: nil, right: nil, topConstant: 0, leftConstant: 24, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 24)
     
-    view.addSubview(centerImageView)
-    centerImageView.anchorCenterSuperview()
-    centerImageView.anchor(nil, left: nil, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: ScreenSize.width * 0.05, heightConstant: ScreenSize.width * 0.05)
+//    view.addSubview(centerImageView)
+//    centerImageView.anchorCenterSuperview()
+//    centerImageView.anchor(nil, left: nil, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: ScreenSize.width * 0.05, heightConstant: ScreenSize.width * 0.05)
   }
   
   func addNode() {
@@ -333,6 +334,26 @@ class GameViewController: UIViewController, ARSCNViewDelegate {
     let rotate = SCNAction.rotateBy(x: 0, y: CGFloat(360.degreesToRadians), z: 0, duration: 15)
     let rotateForever = SCNAction.repeatForever(rotate)
     earthNode.runAction(rotateForever)
+    
+  }
+  
+  func renderer(_ renderer: SCNSceneRenderer, willRenderScene scene: SCNScene, atTime time: TimeInterval) {
+    DispatchQueue.main.async {
+      if self.plusButton.isHighlighted {
+        let sphere = SCNNode()
+        sphere.geometry = SCNSphere(radius: 0.0025)
+        sphere.geometry?.firstMaterial?.diffuse.contents = UIColor.red
+        Service.addChildNode(sphere, toNode: self.arView.scene.rootNode, inView: self.arView, cameraRelativePosition: self.cameraRelativePosition)
+      } else {
+        let sphere = SCNNode()
+        sphere.geometry = SCNSphere(radius: 0.001)
+        sphere.name = "centerPosition"
+        self.removeNode(named: "centerPosition")
+        sphere.geometry?.firstMaterial?.diffuse.contents = UIColor.blue
+        Service.addChildNode(sphere, toNode: self.arView.scene.rootNode, inView: self.arView, cameraRelativePosition: self.cameraRelativePosition)
+      }
+    }
+    
     
   }
   
