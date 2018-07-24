@@ -7,21 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3657DB934F3EA007F2C3C8CD /* Pods_ARMagic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE03924CDFC41D837486F26 /* Pods_ARMagic.framework */; };
+		C91011E82011DDD5004CD246 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91011E72011DDD5004CD246 /* Service.swift */; };
 		C97DE8C52004B1E1002F0E38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97DE8C42004B1E1002F0E38 /* AppDelegate.swift */; };
-		C97DE8C72004B1E1002F0E38 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97DE8C62004B1E1002F0E38 /* ViewController.swift */; };
-		C97DE8CA2004B1E1002F0E38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C97DE8C82004B1E1002F0E38 /* Main.storyboard */; };
 		C97DE8CC2004B1E1002F0E38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C97DE8CB2004B1E1002F0E38 /* Assets.xcassets */; };
 		C97DE8CF2004B1E1002F0E38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C97DE8CD2004B1E1002F0E38 /* LaunchScreen.storyboard */; };
+		C97DE8D72004B326002F0E38 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97DE8D62004B326002F0E38 /* GameViewController.swift */; };
+		C9BEE9DA2005F13C00E9F49A /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BEE9D92005F13C00E9F49A /* Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		94EA91006FB6BEDCC2F7515F /* Pods-ARMagic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARMagic.release.xcconfig"; path = "Pods/Target Support Files/Pods-ARMagic/Pods-ARMagic.release.xcconfig"; sourceTree = "<group>"; };
+		9FE03924CDFC41D837486F26 /* Pods_ARMagic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARMagic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C91011E72011DDD5004CD246 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		C97DE8C12004B1E1002F0E38 /* ARMagic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARMagic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C97DE8C42004B1E1002F0E38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C97DE8C62004B1E1002F0E38 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C97DE8C92004B1E1002F0E38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C97DE8CB2004B1E1002F0E38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C97DE8CE2004B1E1002F0E38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C97DE8D02004B1E1002F0E38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C97DE8D62004B326002F0E38 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		C98E57E453DAB292DCA6E59D /* Pods-ARMagic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARMagic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ARMagic/Pods-ARMagic.debug.xcconfig"; sourceTree = "<group>"; };
+		C9BEE9D92005F13C00E9F49A /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3657DB934F3EA007F2C3C8CD /* Pods_ARMagic.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27FD593AE2DF0F7D4EF1CF8E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C98E57E453DAB292DCA6E59D /* Pods-ARMagic.debug.xcconfig */,
+				94EA91006FB6BEDCC2F7515F /* Pods-ARMagic.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4049EE5242E1BC5142C98F8A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9FE03924CDFC41D837486F26 /* Pods_ARMagic.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C97DE8B82004B1E1002F0E38 = {
 			isa = PBXGroup;
 			children = (
 				C97DE8C32004B1E1002F0E38 /* ARMagic */,
 				C97DE8C22004B1E1002F0E38 /* Products */,
+				27FD593AE2DF0F7D4EF1CF8E /* Pods */,
+				4049EE5242E1BC5142C98F8A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,11 +81,12 @@
 			isa = PBXGroup;
 			children = (
 				C97DE8C42004B1E1002F0E38 /* AppDelegate.swift */,
-				C97DE8C62004B1E1002F0E38 /* ViewController.swift */,
-				C97DE8C82004B1E1002F0E38 /* Main.storyboard */,
 				C97DE8CB2004B1E1002F0E38 /* Assets.xcassets */,
 				C97DE8CD2004B1E1002F0E38 /* LaunchScreen.storyboard */,
 				C97DE8D02004B1E1002F0E38 /* Info.plist */,
+				C97DE8D62004B326002F0E38 /* GameViewController.swift */,
+				C9BEE9D92005F13C00E9F49A /* Extension.swift */,
+				C91011E72011DDD5004CD246 /* Service.swift */,
 			);
 			path = ARMagic;
 			sourceTree = "<group>";
@@ -71,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C97DE8D32004B1E1002F0E38 /* Build configuration list for PBXNativeTarget "ARMagic" */;
 			buildPhases = (
+				BC6AB40D78B9F61C7EE89E49 /* [CP] Check Pods Manifest.lock */,
 				C97DE8BD2004B1E1002F0E38 /* Sources */,
 				C97DE8BE2004B1E1002F0E38 /* Frameworks */,
 				C97DE8BF2004B1E1002F0E38 /* Resources */,
+				90FB46FB3834B565D31A83B7 /* [CP] Embed Pods Frameworks */,
+				B2BD33BDC66D7936EF1853CA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -125,18 +155,73 @@
 			files = (
 				C97DE8CF2004B1E1002F0E38 /* LaunchScreen.storyboard in Resources */,
 				C97DE8CC2004B1E1002F0E38 /* Assets.xcassets in Resources */,
-				C97DE8CA2004B1E1002F0E38 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		90FB46FB3834B565D31A83B7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ARMagic/Pods-ARMagic-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/LBTAComponents/LBTAComponents.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LBTAComponents.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ARMagic/Pods-ARMagic-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2BD33BDC66D7936EF1853CA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ARMagic/Pods-ARMagic-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC6AB40D78B9F61C7EE89E49 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ARMagic-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C97DE8BD2004B1E1002F0E38 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C97DE8C72004B1E1002F0E38 /* ViewController.swift in Sources */,
+				C9BEE9DA2005F13C00E9F49A /* Extension.swift in Sources */,
+				C91011E82011DDD5004CD246 /* Service.swift in Sources */,
+				C97DE8D72004B326002F0E38 /* GameViewController.swift in Sources */,
 				C97DE8C52004B1E1002F0E38 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,14 +229,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C97DE8C82004B1E1002F0E38 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C97DE8C92004B1E1002F0E38 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C97DE8CD2004B1E1002F0E38 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -272,6 +349,7 @@
 		};
 		C97DE8D42004B1E1002F0E38 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C98E57E453DAB292DCA6E59D /* Pods-ARMagic.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +365,7 @@
 		};
 		C97DE8D52004B1E1002F0E38 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94EA91006FB6BEDCC2F7515F /* Pods-ARMagic.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
